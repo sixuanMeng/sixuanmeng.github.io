@@ -1,0 +1,163 @@
+*{
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Roboto:300&display=swap');
+@supports (display:grid) {
+  .message{
+    display: none;
+  }
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 80px 4fr;
+	grid-template-rows: 100px;
+	grid-gap: 20px;
+	grid-template-areas:
+  "header  header"
+  "aside   main"
+  "footer  footer";
+}
+
+#header {
+  font-family: 'Open Sans', sans-serif;
+	grid-area: header;
+  display: grid;
+	grid-template-columns: repeat(2,1fr);
+  border-bottom: 2px dotted #eee;
+}
+
+#header h1{
+  font-size: 30px;
+  margin-left: 40px;
+  margin-top: 20px;
+  color:black;
+}
+#contactinfo{
+  float:right;
+  position:absolute;
+  margin-left: 300px;
+}
+#contactinfo ul {
+  margin-top: 20px;
+  padding-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+	list-style: none;
+  font-size: 15px;
+  line-height: 1.5;
+}
+#contactinfo a:link{
+  text-decoration: none;
+  color:black;
+}
+#aside {
+	grid-area: aside;
+  margin-top: 100px;
+  position: fixed;
+}
+
+#aside ul {
+  margin-left: 40px;
+	list-style: none;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 3;
+}
+#aside ul a {
+  color:black;
+	text-decoration: none;
+}
+
+#aside ul a:hover {
+	text-decoration: overline;
+  color: lightblue;
+}
+#aside ul a:active{
+  font-size: 30px;
+}
+
+#main {
+  font-family: 'Roboto', sans-serif;
+	grid-area: main;
+  margin-left: 200px;
+  margin-right:50px;
+}
+
+#exp{
+  font-size: 25px;
+}
+
+#main img, p{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 100px;
+  width: 100%;
+  max-width: 960px;
+}
+
+#intro{
+  font-size:30px;
+    max-width: 600px;
+}
+
+
+#footer {
+  font-family: 'Open Sans', sans-serif;
+	grid-area: footer;
+  color:black;
+	display: grid;
+	grid-template-columns: repeat(2, 300px);
+  grid-template-rows: 50px;
+  max-width: 600px;
+}
+
+#footer p{
+  color:black;
+  margin-top: 5px;
+  margin-left: 40px;
+}
+#top {
+  font-family: 'Open Sans', sans-serif;
+	float: right;
+  margin-top: 5px;
+	margin-left: 40px;
+  color: black;
+}
+
+#top a:link{
+  text-decoration: none;
+  color: black;
+}
+@media(max-width: 800px) {
+  html{
+    margin:0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "aside"
+    "main"
+    "footer";
+  }
+  #header{
+      border-bottom: none;
+  }
+  #aside{
+    position:relative;
+    margin-top:0;
+  }
+  #aside ul a{
+    display: block;
+    margin-bottom: 10px;
+    background-color: #eee;
+    line-height: 3;
+  }
+  #main{
+    margin-left: 20px;
+    margin-right:50px;
+  }
+
+}
