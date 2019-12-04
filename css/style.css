@@ -75,7 +75,7 @@
   color: lightblue;
 }
 #aside ul a:active{
-  font-size: 30px;
+  text-decoration: overline;
 }
 
 #main {
@@ -130,10 +130,14 @@
   text-decoration: none;
   color: black;
 }
+
 @media(max-width: 800px) {
-  html{
+  *{
+    border:0;
     margin:0;
+    padding:0;
   }
+
   .grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -148,6 +152,7 @@
   #aside{
     position:relative;
     margin-top:0;
+    margin-right:40px;
   }
   #aside ul a{
     display: block;
@@ -157,7 +162,48 @@
   }
   #main{
     margin-left: 20px;
-    margin-right:50px;
+    margin-right:60px;
+  }
+  #main p{
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 400px){
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "aside"
+    "main"
+    "footer";
+    grid-gap:0;
+    width:100%;
+  }
+#header h1{
+  font-size: 20px;
+  margin-top: 50px;
+}
+#header{
+  margin-bottom: 0;
+}
+  #contactinfo{
+    display:none;
+  }
+  #aside ul a{
+    max-width: 300px;
   }
 
+  #main img{
+    max-width: 300px;
+    width:100%;
+  }
+  #main p{
+    font-size: 15px;
+    max-width: 20em;
+  }
+  #footer{
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
 }
