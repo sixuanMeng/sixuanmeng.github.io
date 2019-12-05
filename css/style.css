@@ -10,7 +10,6 @@
     display: none;
   }
 }
-
 .grid {
 	display: grid;
 	grid-template-columns: 80px 4fr;
@@ -21,25 +20,18 @@
   "aside   main"
   "footer  footer";
 }
-
 #header {
   font-family: 'Open Sans', sans-serif;
 	grid-area: header;
   display: grid;
-	grid-template-columns: repeat(2,1fr);
+	grid-template-columns: repeat(2,300px);
   border-bottom: 2px dotted #eee;
 }
-
 #header h1{
   font-size: 30px;
   margin-left: 40px;
   margin-top: 20px;
   color:black;
-}
-#contactinfo{
-  float:right;
-  position:absolute;
-  margin-left: 300px;
 }
 #contactinfo ul {
   margin-top: 20px;
@@ -58,7 +50,6 @@
   margin-top: 100px;
   position: fixed;
 }
-
 #aside ul {
   margin-left: 40px;
 	list-style: none;
@@ -69,7 +60,6 @@
   color:black;
 	text-decoration: none;
 }
-
 #aside ul a:hover {
 	text-decoration: overline;
   color: lightblue;
@@ -77,18 +67,15 @@
 #aside ul a:active{
   text-decoration: overline;
 }
-
 #main {
   font-family: 'Roboto', sans-serif;
 	grid-area: main;
   margin-left: 200px;
   margin-right:50px;
 }
-
 #exp{
   font-size: 25px;
 }
-
 #main img, p{
   margin-top: 20px;
   margin-left: 20px;
@@ -96,13 +83,10 @@
   width: 100%;
   max-width: 960px;
 }
-
 #intro{
   font-size:30px;
     max-width: 600px;
 }
-
-
 #footer {
   font-family: 'Open Sans', sans-serif;
 	grid-area: footer;
@@ -112,7 +96,6 @@
   grid-template-rows: 50px;
   max-width: 600px;
 }
-
 #footer p{
   color:black;
   margin-top: 5px;
@@ -125,13 +108,13 @@
 	margin-left: 40px;
   color: black;
 }
-
 #top a:link{
   text-decoration: none;
   color: black;
 }
 
-@media(max-width: 800px) {
+@media(max-width: 800px) /*for smaller laptop screen*/
+{
   *{
     border:0;
     margin:0;
@@ -146,6 +129,7 @@
     "main"
     "footer";
   }
+
   #header{
       border-bottom: none;
   }
@@ -163,13 +147,15 @@
   #main{
     margin-left: 20px;
     margin-right:60px;
+
   }
   #main p{
     font-size: 20px;
   }
 }
 
-@media(max-width: 400px){
+@media(max-width: 400px)/*for mobile screen*/
+{
   .grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -178,22 +164,29 @@
     "main"
     "footer";
     grid-gap:0;
-    width:100%;
   }
-#header h1{
+  #header h1{
+    font-style: 30px;
+  }
+  #header{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap:0;
+  }
+  #header h1{
   font-size: 20px;
   margin-top: 50px;
-}
-#header{
-  margin-bottom: 0;
-}
+  }
   #contactinfo{
-    display:none;
+    margin-left: 20px;
   }
-  #aside ul a{
-    max-width: 300px;
+  #contactinfo a:link{
+    text-decoration: underline;
+    color:black;
   }
-
+#aside{
+  margin-top: 70px;
+}
   #main img{
     max-width: 300px;
     width:100%;
@@ -204,6 +197,52 @@
   }
   #footer{
     grid-template-columns: 1fr;
-    margin-top: 20px;
+    margin-top: 10px;
+  }
+  #footer{
+    font-size: 12px;
   }
 }
+
+
+@media only screen /*for iphone plus*/
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (-webkit-device-pixel-ratio : 3) {
+
+  #header{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0;
+  }
+    #header{
+      font-size: 5px;
+      margin-top: 8px;
+    }
+
+    #contactinfo{
+      position: relative;
+      margin-left:20px;
+      margin-top: 40px;
+    }
+    #contactinfo ul a:link{
+      text-decoration: underline;
+    }
+    #aside{
+      margin-top: 30px;
+    }
+    #aside ul a{
+      max-width: 340px;
+    }
+    #main img{
+      max-width: 340px;
+    }
+    #main p{
+      font-size: 17px;
+      max-width: 20em;
+    }
+    #footer{
+      grid-template-columns: 1fr;
+      margin-top: 5px;
+    }
+  }
