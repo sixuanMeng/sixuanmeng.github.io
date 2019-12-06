@@ -9,9 +9,6 @@
   .message{
     display: none;
   }
-  body{
-    display:none;
-  }
 }
 .grid {
 	display: grid;
