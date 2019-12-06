@@ -224,6 +224,7 @@
       position: relative;
       margin-left:20px;
       margin-top: 40px;
+      margin-bottom: 20px;
     }
     #contactinfo ul a:link{
       text-decoration: underline;
